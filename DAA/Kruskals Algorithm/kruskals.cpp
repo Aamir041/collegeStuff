@@ -51,15 +51,18 @@ void kruskals(Edge *input, int n,int E){
         i++;
     }
 
-
+    int finalWeight = 0;
     for(int i=0; i < n-1; i++){
         if(output[i].source < output[i].dest){
         cout << output[i].source << " "<< output[i].dest << " "<< output[i].weight;
+        finalWeight = finalWeight + output[i].weight;
     }else{
         cout << output[i].dest << " "<< output[i].source << " "<< output[i].weight;
+        finalWeight = finalWeight + output[i].weight;
     }
     cout <<  endl;
-}
+    }
+    cout<<"MST Weight: "<<finalWeight<<endl;
 }
 
 int main() {
