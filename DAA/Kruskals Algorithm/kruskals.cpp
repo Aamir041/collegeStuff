@@ -1,5 +1,4 @@
-#include<iostream>
-#include<algorithm>
+#include<bits/stdc++.h>
 using namespace std;
 
 
@@ -26,15 +25,19 @@ int findParent(int v, int *parent){
 
 void kruskals(Edge *input, int n,int E){
     sort(input, input + E, compare); 
+    
     Edge *output = new Edge[n-1];
 
 
     int *parent = new int[n];
-    for(int i {0} ; i < n ; i++){
+    for(int i =0 ; i < n ; i++){
         parent[i] = i;
     }
 
-    int count{},i{};
+    int count,i;
+    count = 0;
+    i = 0;
+    
     while(count != n-1){
         Edge currentEdge = input[i];
         int sourceparent = findParent(currentEdge.source,parent);
@@ -49,7 +52,7 @@ void kruskals(Edge *input, int n,int E){
     }
 
 
-    for(int i{0}; i < n-1; i++){
+    for(int i=0; i < n-1; i++){
         if(output[i].source < output[i].dest){
         cout << output[i].source << " "<< output[i].dest << " "<< output[i].weight;
     }else{
@@ -68,7 +71,8 @@ int main() {
     cout<<endl;
 
     Edge *input = new Edge[E];
-    for(int i{0}; i < E; i++){
+
+    for(int i = 0; i < E; i++){
         int s,d,w;
         cout<<"Enter source: ";
         cin>>s;
