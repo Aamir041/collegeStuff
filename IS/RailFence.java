@@ -1,15 +1,23 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class RailFence {
     public static void main(String[] args) {
         
-        char[][] cipherArray = encryptArray(5, "aamirsaudagar");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Dept: ");
+        int depth = sc.nextInt();
+
+        System.out.print("Enter Plain Text: ");
+        String plainText = sc.next();
+
+        char[][] cipherArray = encryptArray(depth, plainText.toLowerCase());
         
         String cipherText = cipher(cipherArray);
-        System.out.println(cipherText);
+        System.out.println("Ciphered Text: "+cipherText);
 
         String encipherText = decrypt(cipherArray);
-        System.out.println(encipherText);
+        System.out.println("Enciphered Text: "+encipherText);
 
     }
 
