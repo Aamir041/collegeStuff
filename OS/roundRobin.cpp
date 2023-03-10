@@ -77,3 +77,19 @@ int main() {
 
     return 0;
 }
+
+/*
+Here's a brief explanation of the code:
+
+A Process class is defined to hold the arrival time, burst time, remaining time, completion time, turnaround time, and waiting time of each process.
+
+The program prompts the user to enter the number of processes and the time quantum.
+
+The arrival time and burst time for each process are entered by the user and stored in the p array of Process objects. The remaining time and total burst time are also calculated and stored.
+
+The program uses a while loop to simulate the round robin scheduling algorithm. The loop runs until all processes have been completed.
+
+For each iteration of the loop, the program checks each process to see if its remaining time is less than or equal to the time quantum. If it is, the process is completed, and its completion time, turnaround time, and waiting time are calculated and stored. The program also updates the total waiting time and total turnaround time.
+
+If a process's remaining time is greater than the time quantum, the program subtracts the time quantum from its
+*/
