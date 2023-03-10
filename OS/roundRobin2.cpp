@@ -14,17 +14,18 @@ class Process {
 int main() {
     int time_quantum, n, i, total_burst_time = 0, time = 0, completed = 0;
     float avg_waiting_time = 0, avg_turnaround_time = 0;
-    Process p[10];
+    Process p[4];
 
-    cout << "Enter the number of processes: ";
-    cin >> n;
+    n = 4;
 
     cout << "Enter the time quantum: ";
     cin >> time_quantum;
 
+    int prcs[4][2] = {{0,5},{1,4},{2,2},{4,1}};
+
     for (i = 0; i < n; i++) {
-        cout << "Enter arrival time and burst time for process " << i+1 << ": ";
-        cin >> p[i].arrival_time >> p[i].burst_time;
+        p[i].arrival_time = prcs[i][0];
+        p[i].burst_time = prcs[i][1];
         p[i].remaining_time = p[i].burst_time;
         total_burst_time += p[i].burst_time;
     }
