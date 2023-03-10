@@ -1,0 +1,13 @@
+Here's an explanation of how the script works:
+
+The script defines four functions: create_database, insert_record, view_database, and delete_record.
+
+The create_database function prompts the user to enter a database name, creates a new CSV file with that name, and prints a success message.
+
+The insert_record function prompts the user to enter a database name, roll number, name, and marks for a new record, and appends the record to the CSV file for the given database, if it exists. Otherwise, it prints an error message.
+
+The view_database function prompts the user to enter a database name and prints the contents of the CSV file in a table format, if it exists. Otherwise, it prints an error message.
+
+The delete_record function prompts the user to enter a database name and a roll number of the record to be deleted. The function deletes the record with the given roll number from the CSV file, if it exists, and prints a success message. Otherwise, it prints an error message.
+
+The main program uses a while loop to repeatedly

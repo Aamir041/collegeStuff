@@ -1,0 +1,11 @@
+Here's an explanation of how the script works:
+
+The script reads the command-line argument into the variable path.
+
+The script uses the -d operator to check if path is a directory. If it is, the script prints a message indicating that it is a directory.
+
+If path is not a directory, the script uses the -f operator to check if it is a regular file. If it is, the script prints a message indicating that it is a regular file.
+
+If path is neither a directory nor a regular file, the script prints a message indicating that it is something else.
+
+Note that this script assumes that the command-line argument is a valid path. If the argument is not a valid path, the script may produce unexpected results or errors. To handle invalid paths, you could add additional checks or error handling.

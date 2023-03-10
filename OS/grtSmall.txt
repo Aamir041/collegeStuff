@@ -1,0 +1,11 @@
+Here's an explanation of how the script works:
+
+The script prompts the user to enter three numbers and reads them into the variables num1, num2, and num3.
+
+The script uses nested if statements to determine which of the three numbers is the largest, and assigns the value to the variable largest.
+
+The script uses nested if statements to determine which of the three numbers is the smallest, and assigns the value to the variable smallest.
+
+The script prints the values of largest and smallest.
+
+Note that this script assumes that the user enters valid numeric input. If the user enters non-numeric input, the script may produce unexpected results or errors. To handle invalid input, you could add additional checks or error handling.

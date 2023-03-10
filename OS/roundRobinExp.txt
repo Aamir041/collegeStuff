@@ -1,0 +1,9 @@
+In this implementation, the Process class represents a process with a process ID (pid), an arrival time (arrivalTime), a burst time (burstTime), and a remaining burst time (remainingTime).
+
+The main function uses an array of processes and a time quantum to simulate the Round Robin CPU scheduling algorithm. 
+The queue container from the <queue> library is used to hold the processes.
+
+The waiting and turnaround times for each process are calculated as each process is run for the time quantum or until it completes. 
+The min function from the <algorithm> library is used to determine the amount of time the process should run.
+
+Finally
