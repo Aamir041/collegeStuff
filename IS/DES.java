@@ -72,10 +72,8 @@ public class DES {
         return encrypted;
     }
 
-    private static byte[] decrypt(byte[] raw, byte[] encrypted)
-            throws Exception {
-        SecretKeySpec skeySpec = new SecretKeySpec(raw,
-                "DES");
+    private static byte[] decrypt(byte[] raw, byte[] encrypted) throws Exception {
+        SecretKeySpec skeySpec = new SecretKeySpec(raw,"DES");
         Cipher cipher = Cipher.getInstance("DES");
         cipher.init(Cipher.DECRYPT_MODE, skeySpec);
         byte[] decrypted = cipher.doFinal(encrypted);
