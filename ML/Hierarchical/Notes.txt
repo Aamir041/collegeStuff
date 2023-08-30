@@ -1,0 +1,29 @@
+import pandas as pd: Imports the Pandas library and gives it an alias 'pd' for easier use in the code.
+import numpy as np: Imports the NumPy library and gives it an alias 'np'.
+import matplotlib.pyplot as plt: Imports the pyplot module from the Matplotlib library for creating plots.
+from sklearn.cluster import AgglomerativeClustering: Imports the AgglomerativeClustering class from scikit-learn, which is used for hierarchical clustering.
+from sklearn.preprocessing import StandardScaler, normalize: Imports classes for data preprocessing. StandardScaler is used for standardizing features, and normalize is used for normalizing features.
+from sklearn.decomposition import PCA: Imports the Principal Component Analysis (PCA) class from scikit-learn, which is used for dimensionality reduction.
+from sklearn.metrics import silhouette_score: Imports the silhouette_score function from scikit-learn, which is used to evaluate the quality of clusters.
+import scipy.cluster.hierarchy as shc: Imports the hierarchical clustering module from SciPy.
+
+raw_df = pd.read_csv('CC GENERAL.csv'): Reads a CSV file named 'CC GENERAL.csv' into a Pandas DataFrame called raw_df.
+raw_df = raw_df.drop('CUST_ID', axis=1): Drops the 'CUST_ID' column from the DataFrame along the columns (axis 1).
+raw_df.fillna(method='ffill', inplace=True): Fills missing values in the DataFrame using forward filling method. Missing values are replaced by the previous non-missing value in the same column.
+raw_df.head(2): Displays the first 2 rows of the DataFrame for visualization.
+
+scaler = StandardScaler(): Creates an instance of the StandardScaler class, which will be used to standardize the data.
+scaled_df = scaler.fit_transform(raw_df): Applies standardization to the raw_df DataFrame using the scaler. Standardization transforms the data to have zero mean and unit variance.
+
+normalized_df = normalize(scaled_df): Applies normalization to the standardized data using the normalize function. Normalization scales the data to have unit norm.
+normalized_df = pd.DataFrame(normalized_df): Converts the numpy array result of normalization back to a Pandas DataFrame for convenience.
+
+pca = PCA(n_components=2): Creates an instance of the PCA class with 2 principal components. This will reduce the dimensionality of the data to 2 principal components.
+X_principal = pca.fit_transform(normalized_df): Applies PCA transformation to the normalized data, reducing it to 2 principal components.
+X_principal = pd.DataFrame(X_principal): Converts the result of PCA back to a DataFrame.
+X_principal.columns = ['P1', 'P2']: Renames the columns of the DataFrame to 'P1' and 'P2' for clarity.
+
+plt.figure(figsize=(6, 6)): Creates a new figure for the plot with a specific size (6x6 inches).
+plt.title('Visualising the data'): Sets the title for the plot.
+Dendrogram = shc.dendrogram((shc.linkage(X_principal, method='ward'))): Generates a dendrogram using hierarchical clustering. The linkage matrix is created using the 'ward' method, and the dendrogram is plotted.
+This code seems to be performing data preprocessing, dimensionality reduction using PCA, and then visualizing the data using a dendrogram for hierarchical clustering analysis.
