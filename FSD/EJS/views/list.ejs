@@ -14,8 +14,14 @@
     </form>
 
     <ul>
-        <% for(let i = 0; i < todoList.length; i++ ) { %>
-            <li><%=todoList[i]%></li>
+        <% if(todoList.length) {%>
+            <% for (let i = 0; i<todoList.length; i++) {%>
+                <li><%=todoList[i].task%></li>
+            <% } %>
+        <% } %>
+        
+        <% if(! todoList.length) {%>
+            <h1>Nothing</h1>
         <% } %>
     </ul>
 
