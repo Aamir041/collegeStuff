@@ -16,13 +16,29 @@
 // EXPRESS CONNECTION
 const express = require("express");
 const bodyParser = require("body-parser");
+const ejs = require("ejs");
+
+
+let todos = ["Do Homework","Play Football", "Go To College", "Go Home"];
 
 const app = express();
+app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",(req,res)=>{
-    res.send("Hello World!");
+    let date = new Date();
+    let todayDate = date.toLocaleDateString("en-US"); 
+    // console.log(date.toLocaleDateString("en-US"));
+    res.render("list",{kindOfDay:todayDate, todoList:todos});
 })
+
+app.post("/", (req,res) => {
+    let newItem = req.body.newItem;
+    todos = [...todos,newItem];
+    res.redirect("/");
+})
+
+
 
 app.listen(4000,() =>{
     console.log("Server Running At Port 4000!");

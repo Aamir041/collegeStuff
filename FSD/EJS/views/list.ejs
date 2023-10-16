@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+</head>
+<body>
+    <h1>Today Date : <%= kindOfDay %> </h1>
+
+    <form action="/" method="post">
+        <label for="newItem">Add New Item : </label>
+        <input id ="newItem" type="text" name="newItem" autocomplete="off">
+    </form>
+
+    <ul>
+        <% for(let i = 0; i < todoList.length; i++ ) { %>
+            <li><%=todoList[i]%></li>
+        <% } %>
+    </ul>
+
+</body>
+</html>
