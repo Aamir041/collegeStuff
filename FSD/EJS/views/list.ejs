@@ -3,20 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color:  #f2f2f2;
+        }
+        h1{
+            text-align: center;
+            width: 100%;
+            padding: 1rem 2rem;
+        }
+        
+        form{
+            display: flex;
+            align-items: end;
+            margin-bottom: 1rem;
+        }
+
+        form label{
+            font-size: 1.5rem;
+        }
+
+        form input{
+            padding: 0.25rem 0.5rem;
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+
+        .task-list{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tasks{
+            text-align: center;
+            width: 70%;
+            list-style: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 0rem;
+            margin: 0.5rem 0rem;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+
+
+    </style>
     <title>TODO List</title>
 </head>
 <body>
     <h1>Today Date : <%= kindOfDay %> </h1>
 
+    
     <form action="/" method="post">
-        <label for="newItem">Add New Item : </label>
-        <input id ="newItem" type="text" name="newItem" autocomplete="off">
+        <label >Add New Item </label>
+        <input id="newItem" type="text" name="newItem" autocomplete="off">
     </form>
 
-    <ul>
+    <ul class="task-list">
         <% if(todoList.length) {%>
             <% for (let i = 0; i<todoList.length; i++) {%>
-                <li><%=todoList[i].task%></li>
+                <li class="tasks" ><%=todoList[i].task%></li>
             <% } %>
         <% } %>
         
